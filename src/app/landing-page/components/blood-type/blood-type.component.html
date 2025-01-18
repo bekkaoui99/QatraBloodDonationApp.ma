@@ -1,0 +1,96 @@
+<div class="flex flex-col items-center  p-20">
+
+
+  <!-- Title -->
+  <h2 class="section-title text-xl text-center sm:text-3xl font-bold sm:mb-6 lg:px-20">
+    {{ 'landingPage.bloodType.title' | translate }}
+  </h2>
+
+  <!-- Blood Type Buttons -->
+  <div class="flex flex-wrap justify-center items-center gap-x-1 sm:gap-x-5 mb-4 pt-10">
+    <button
+      *ngFor="let type of bloodTypes"
+      class="w-12 h-12 bg-gray-200 text-gray-800 flex items-center justify-center rounded-xl font-bold border-2"
+      [ngClass]="{
+        'border-red-500': selectedBloodType === type,
+        'border-gray-300': selectedBloodType !== type
+      }"
+      (click)="selectBloodType(type)"
+    >
+      {{ type }}
+    </button>
+  </div>
+
+  <!-- Blood Bag -->
+  <div class="relative ">
+    <div class="w-24 h-32 bg-blue-200 rounded-t-md border-2 border-gray-300 flex items-end justify-center">
+      <div class="w-20 h-1/2 bg-red-500"></div>
+    </div>
+    <div class="w-2 h-12 mx-auto"
+         [ngClass]="{
+    'bg-red-500': selectedBloodType !== null,
+    'bg-gray-300': selectedBloodType === null
+    }"
+    ></div>
+  </div>
+
+
+
+  <!-- Blood Types with Paths -->
+  <div class="flex items-center justify-center w-1/9 sm:w-1/7 md:w-full">
+    <!-- Left Blood Types -->
+    <div class="flex flex-col items-end gap-6">
+      <div *ngFor="let leftType of leftBloodTypes" class="flex items-end gap-2">
+        <div
+          class="w-12 h-12 bg-gray-200 text-gray-800 flex items-center justify-center rounded-xl font-bold"
+          [ngClass]="{
+          'bg-red-300': canReceiveBlood(leftType)
+        }"
+        >
+          {{ leftType }}
+        </div>
+        <div
+          class="sm:w-44 w-28 h-2"
+          [ngClass]="{
+          'bg-red-500': canReceiveBlood(leftType),
+          'bg-gray-300': !canReceiveBlood(leftType)
+        }"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Central Vertical Path -->
+    <div
+      class="h-auto w-2 self-stretch"
+      [ngClass]="{
+    'bg-red-500': selectedBloodType !== null,
+    'bg-gray-300': selectedBloodType === null
+    }"
+    ></div>
+
+    <!-- Right Blood Types -->
+    <div class="flex flex-col items-start gap-6">
+      <div *ngFor="let rightType of rightBloodTypes" class="flex items-end gap-2">
+        <div
+          class="sm:w-44 w-28 h-2"
+          [ngClass]="{
+          'bg-red-500': canReceiveBlood(rightType),
+          'bg-gray-300': !canReceiveBlood(rightType)
+        }"
+        ></div>
+        <div
+          class="w-12 h-12 bg-gray-200 text-gray-800 flex items-center justify-center rounded-xl font-bold"
+          [ngClass]="{
+          'bg-red-300': canReceiveBlood(rightType)
+        }"
+        >
+          {{ rightType }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>

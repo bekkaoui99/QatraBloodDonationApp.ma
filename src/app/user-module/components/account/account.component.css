@@ -1,0 +1,21 @@
+::ng-deep .p-paginator {
+  font-size: 1.25rem; /* Increase font size */
+  padding: 1rem; /* Add padding around the paginator */
+}
+
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
+  margin: 0 0.5rem; /* Add space between page numbers */
+  padding: 0.5rem 1rem; /* Increase padding inside page buttons */
+  border-radius: 0.5rem; /* Make buttons rounded */
+}
+
+::ng-deep .p-paginator .p-paginator-page.p-highlight {
+  background-color: #8A0303; /* customBGRed color for selected page */
+  color: #fff;
+  font-weight: bold;
+}
+
+::ng-deep .p-paginator .p-paginator-page:hover {
+  background-color: #b63b3b; /* Lighter red shade for hover effect */
+  color: #fff; /* Make text white on hover */
+}

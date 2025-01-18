@@ -1,0 +1,79 @@
+<section class="section mt-40">
+  <div class="container mx-auto px-4 mt-30">
+    <!-- Title -->
+    <h2 class="section-title text-center sm:text-3xl text-2xl  font-bold sm:mb-6 mb-2 lg:px-20">
+      {{ 'landingPage.howWebsiteWorks.title' | translate }}
+    </h2>
+
+    <!-- First Notice (Alert) -->
+    <div class="content mb-6 lg:px-20">
+      <div class="notices alert bg-blue-100 text-blue-700 p-4 rounded-lg border border-blue-300">
+        <p>
+          {{ 'landingPage.howWebsiteWorks.firstNotice' | translate }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Second Notice (Alert) -->
+    <div class="content mb-6 lg:px-20">
+      <div class="notices alert bg-yellow-100 text-yellow-700 p-4 rounded-lg border border-yellow-300">
+        <p>
+          {{ 'landingPage.howWebsiteWorks.secondNotice' | translate }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Card Columns (Alert Style Cards) -->
+    <section class="section flex items-center justify-center py-10 ">
+      <div class="container mx-auto px-4">
+        <!-- Card Columns (Alert Style Cards Centered) -->
+        <div class="columns grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center mx-auto">
+          <!-- Beneficiary Card (Alert Style) -->
+          <div class="column flex justify-center">
+            <div class="alert bg-white text-black p-6 rounded-lg border border-gray-400 w-full max-w-md h-full">
+              <div class="card-body">
+                <i class="card-icon pi pi-heart mb-5 text-3xl text-red-500"></i>
+                <h3 class="card-title text-xl font-semibold">
+                  {{ 'landingPage.howWebsiteWorks.cards.beneficiary.title' | translate }}
+                </h3>
+                <p class="card-text">
+                  {{ 'landingPage.howWebsiteWorks.cards.beneficiary.text' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Donor Card (Alert Style) -->
+          <div class="column flex justify-center">
+            <div class="alert bg-white text-black p-6 rounded-lg border border-gray-400 w-full max-w-md h-full">
+              <div class="card-body">
+                <i class="card-icon pi pi-gift mb-5 text-3xl text-green-500"></i>
+                <h3 class="card-title text-xl font-semibold">
+                  {{ 'landingPage.howWebsiteWorks.cards.donor.title' | translate }}
+                </h3>
+                <p class="card-text">
+                  {{ 'landingPage.howWebsiteWorks.cards.donor.text' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Search for Donor/Beneficiary Card (Alert Style) -->
+          <div class="column flex justify-center">
+            <div class="alert bg-white text-black p-6 rounded-lg border border-gray-400 w-full max-w-md h-full">
+              <div class="card-body">
+                <i class="card-icon pi pi-search mb-5 text-3xl text-blue-500"></i>
+                <h3 class="card-title text-xl font-semibold">
+                  {{ 'landingPage.howWebsiteWorks.cards.search.title' | translate }}
+                </h3>
+                <p class="card-text">
+                  {{ 'landingPage.howWebsiteWorks.cards.search.text' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>

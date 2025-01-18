@@ -1,0 +1,262 @@
+{
+
+  "landingPage": {
+    "header": {
+      "logoAlt": "Logo Qatra",
+      "brandName": "Qatra",
+      "navLinks": {
+        "searchDonor": "Rechercher un donneur",
+        "donateNow": "Faire un don"
+      },
+      "buttons": {
+        "login": "Connexion",
+        "suggestion": "Suggestion",
+        "logout": "Déconnexion",
+        "account": "Compte"
+
+      },
+      "languages": {
+        "en": "Anglais",
+        "fr": "Français",
+        "ar": "Arabe"
+      }
+    },
+
+    "landing": {
+      "heading": "Sauver une vie - c'est comme si vous aviez sauvé l'humanité entière",
+      "description": "Au Maroc, le taux de don de sang n'est que de 9,3 pour mille personnes, contre plus de 36 dans les pays développés. Cette pénurie menace la vie de nombreux patients et entraîne le report de chirurgies essentielles. Votre don peut sauver des vies et garantir la disponibilité du sang pour ceux qui en ont besoin. Ne laissez pas les autres souffrir par négligence. Soyez le héros dont votre pays a besoin, donnez votre sang aujourd'hui.",
+      "donateNowButton": "Faire un don"
+    },
+
+    "howWebsiteWorks": {
+      "title": "Comment fonctionne le site Web",
+      "firstNotice": "Ce site Web vous aide à trouver un donneur ou une personne ayant besoin d'un don. Après avoir trouvé leur publication, vous pouvez les contacter via leur numéro de téléphone (qui est obligatoire). Nous ne demandons ni n'affichons votre genre/nom pour éviter tout harcèlement via votre numéro de téléphone. Nous suivons également les consultations de chaque numéro pour prévenir les abus.",
+      "secondNotice": "Vous pouvez ignorer l'entrée de votre groupe sanguin si l'information n'est pas disponible.",
+      "cards": {
+        "beneficiary": {
+          "title": "Bénéficiaire",
+          "text": "Vous devez entrer votre groupe sanguin et la date de votre disponibilité, ainsi que choisir votre ville et le centre de transfusion sanguine."
+        },
+        "donor": {
+          "title": "Donneur",
+          "text": "Vous devez entrer votre groupe sanguin et la date de votre disponibilité, ainsi que choisir votre ville et le centre de transfusion sanguine."
+        },
+        "search": {
+          "title": "Rechercher un Donneur/Bénéficiaire",
+          "text": "Vous devez entrer votre groupe sanguin et la ville où se trouve le centre de transfusion sanguine le plus proche."
+        }
+      }
+    },
+    "bloodType": {
+      "title": "Découvrez le pouvoir de votre groupe sanguin"
+    },
+
+    "questionSection": {
+      "title": "Questions fréquemment posées",
+      "source": "Source d'information provenant du site officiel du Ministère de la Santé",
+      "link": "Lien",
+      "cards": {
+          "one": {
+            "title": "Qu'est-ce que le don de sang ?",
+            "question": "Le sang est une substance vitale qui ne peut pas être fabriquée ; il doit provenir d'une personne en bonne santé pour traiter un individu malade dans le besoin. Le don de sang est le seul moyen pour les patients de recevoir ce dont ils ont besoin pour rester en vie. Une quantité d'environ 450 ml de sang, soit 7 % du sang du corps, est prélevée. Ce processus dure entre cinq minutes et un quart d'heure."
+          },
+          "two": {
+            "title": "Y a-t-il un danger à donner son sang ?",
+            "question": "Le don de sang ne présente aucun risque pour le corps humain. Tous les matériels utilisés sont stériles et à usage unique, donc aucune maladie ne peut être transmise lors du processus de don."
+          },
+          "three": {
+            "title": "Ce qu'il faut savoir sur le don de sang",
+            "questions": [
+              "Le don de sang est un service humanitaire noble pour sauver des vies.",
+              "Le don de sang est un devoir religieux.",
+              "Chaque don de sang peut sauver la vie de trois personnes.",
+              "Toutes les 10 secondes, quelqu'un a besoin en urgence d'une transfusion sanguine.",
+              "Le corps humain peut produire 250 millions de globules rouges chaque jour.",
+              "Les patients ont un besoin urgent de globules rouges, qui ne peuvent pas être fabriqués artificiellement."
+            ]
+          },
+          "four": {
+            "title": "Quels sont les avantages du don de sang ?",
+            "questions": [
+              "Aide à stimuler la circulation sanguine.",
+              "Aide à activer la moelle osseuse et à produire de nouvelles cellules sanguines (globules rouges, globules blancs et plaquettes) capables de transporter plus d'oxygène vers les principaux organes du corps.",
+              "Aide à éliminer l'excès de fer qui, s'il est élevé dans le sang, augmente le risque de maladies cardiaques et accélère l'oxydation du cholestérol, entraînant des dommages aux petites artères.",
+              "Les personnes qui donnent leur sang au moins une fois par an sont moins susceptibles de souffrir de maladies circulatoires et de leucémie."
+            ]
+          },
+          "five": {
+            "title": "Quelles sont les conditions pour donner son sang ?",
+            "questions": [
+              "Être en bonne santé, sans maladies contagieuses ou chroniques.",
+              "Les donneurs doivent avoir entre 18 et 60 ans.",
+              "Les donneurs doivent peser au moins 50 kg.",
+              "Après avoir reçu un vaccin ou des médicaments, vous devez attendre trois semaines.",
+              "Après une extraction dentaire ou une thérapie par ventouses, vous devez attendre six mois.",
+              "Si vous avez eu la tuberculose, vous devez attendre cinq ans après la guérison avant de donner votre sang."
+            ]
+          },
+          "six": {
+            "title": "Quelles sont les directives les plus importantes après un don de sang ?",
+            "questions": [
+              "Reposez-vous et prenez un repas léger. Après 10 ou 15 minutes, vous pouvez quitter la zone de don.",
+              "Ne retirez pas le bandage médical du site de prélèvement pendant une à trois heures.",
+              "Buvez plus de liquides que d'habitude pendant les deux heures suivant le don.",
+              "Évitez les activités physiques intenses ou l'exercice pendant 24 heures.",
+              "Si vous fumez, évitez de fumer pendant deux heures après le don, car inhaler de la fumée peut provoquer des étourdissements et une pâleur de la peau."
+            ]
+          }
+      }
+    },
+    "supportSection": {
+      "title": "Support pour le site Web et suggestions d'amélioration",
+      "buttonText": "Soumettre une suggestion"
+    },
+    "videoSection": {
+      "title": "Vidéo pour plus de détails"
+    }
+
+  },
+
+
+  "userTemplate": {
+
+    "donate": {
+      "notification": {
+        "title": "Notification",
+        "request": "Demande",
+        "notices": [
+          "Vous pouvez publier une demande de don de sang, qui sera affichée sur la page de dons jusqu'à ce que quelqu'un la trouve.",
+          "Vous pouvez publier une demande pour trouver un donneur de sang, qui sera affichée sur la page de dons jusqu'à ce que quelqu'un puisse donner.",
+          "Vous pouvez directement donner en recherchant une personne dans le besoin via le lien suivant :",
+          "Vous pouvez directement bénéficier en recherchant un donneur via le lien suivant :"
+        ]
+      },
+      "form": {
+        "title": "Créer une demande de don de sang",
+        "fields": {
+          "email": {
+            "label": "Adresse e-mail",
+            "placeholder": "Veuillez écrire votre e-mail",
+            "validation": {
+              "required": "L'adresse e-mail est requise.",
+              "invalid": "Veuillez entrer une adresse e-mail valide."
+            }
+          },
+          "type": {
+            "label": "Je veux",
+            "placeholder": "Je veux",
+            "validation": {
+              "required": "Veuillez sélectionner un statut."
+            },
+            "options": {
+              "donate": "Donner",
+              "receive": "Recevoir"
+            }
+          },
+          "bloodType": {
+            "label": "Groupe sanguin",
+            "placeholder": "Sélectionnez votre groupe sanguin",
+            "validation": {
+              "required": "Veuillez sélectionner un groupe sanguin."
+            }
+          },
+          "city": {
+            "label": "Villes disponibles",
+            "placeholder": "Sélectionnez votre ville",
+            "validation": {
+              "required": "Veuillez sélectionner une ville."
+            }
+          },
+          "locationId": {
+            "label": "Centre de transfusion sanguine",
+            "placeholder": "Sélectionnez un centre de transfusion sanguine",
+            "validation": {
+              "required": "Veuillez sélectionner un centre de transfusion sanguine."
+            }
+          },
+          "startDateAvailability": {
+            "label": "Disponible à partir de",
+            "validation": {
+              "required": "Veuillez sélectionner une date de début."
+            }
+          },
+          "endDateAvailability": {
+            "label": "Disponible jusqu'à",
+            "validation": {
+              "optional": "Ce champ est optionnel."
+            }
+          }
+        },
+        "submitButton": "Soumettre"
+      }
+    },
+
+    "searchForDonation": {
+      "title": "Rechercher un don",
+      "button": {
+        "search": "Rechercher",
+        "details": "Détails",
+        "website": "Site Web"
+      },
+      "card": {
+        "fields": {
+          "city": "Ville",
+          "bloodType": "Groupe sanguin",
+          "availableFrom": "Disponible à partir de",
+          "availableUntil": "Disponible jusqu'à"
+        }
+      },
+      "noData": "Aucune donnée trouvée pour cette recherche",
+      "hasNotSearchYet": "Veuillez lancer une recherche pour trouver des dons."
+    },
+
+    "profile": {
+      "header": {
+        "profile": "Profil",
+        "donationPost": "Mes publications pour le don de sang",
+        "benefitPost": "Mes publications pour demander des avantages"
+      },
+      "profile": {
+        "title": "Informations sur le profil",
+        "info": {
+          "email": "Email",
+          "phoneNumber": "Numéro de téléphone"
+        }
+      },
+      "donationPost": {
+        "title": "Mes publications pour le don de sang",
+        "buttons": {
+          "delete": "Supprimer",
+          "website": "Site web"
+        },
+        "card": {
+          "fields": {
+            "city": "Ville",
+            "bloodType": "Groupe sanguin",
+            "availableFrom": "Disponible à partir de",
+            "availableUntil": "Disponible jusqu'à"
+          }
+        }
+      },
+      "benefitPost": {
+        "title": "Mes publications pour demander des avantages",
+        "buttons": {
+          "delete": "Supprimer",
+          "website": "Site web"
+        },
+        "card": {
+          "fields": {
+            "city": "Ville",
+            "bloodType": "Groupe sanguin",
+            "availableFrom": "Disponible à partir de",
+            "availableUntil": "Disponible jusqu'à"
+          }
+        }
+      }
+    }
+
+  }
+
+
+
+}

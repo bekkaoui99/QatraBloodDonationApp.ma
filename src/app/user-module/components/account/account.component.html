@@ -1,0 +1,169 @@
+<section class="bg-gray-100 py-4 pb-20">
+  <!-- Subheader with Buttons -->
+  <div
+    class="flex flex-wrap justify-center gap-4 bg-white shadow-md p-4 rounded-lg mx-auto w-11/12 md:w-3/4">
+    <button
+      type="button"
+      class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-customHoverBGRed hover:text-white focus:outline-none"
+      [ngClass]="{'bg-customBGRed text-white': showProfile}"
+      (click)="showMyProfile()">
+      {{ 'userTemplate.profile.header.profile' | translate }}
+    </button>
+    <button
+      type="button"
+      class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-customHoverBGRed hover:text-white focus:outline-none"
+      [ngClass]="{'bg-customBGRed text-white': showBloodDonations}"
+      (click)="showMyBloodDonations()">
+      {{ 'userTemplate.profile.header.donationPost' | translate }}
+    </button>
+    <button
+      type="button"
+      class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-customHoverBGRed hover:text-white focus:outline-none"
+      [ngClass]="{'bg-customBGRed text-white': showRequestBenefits}"
+      (click)="showMyRequestBenefits()">
+      {{ 'userTemplate.profile.header.benefitPost' | translate }}
+    </button>
+  </div>
+
+  <!-- Profile Section -->
+  <div *ngIf="showProfile" class="mt-5 bg-white shadow-md p-6 rounded-lg mx-auto w-11/12 md:w-3/4">
+    <h2 class="text-2xl md:text-3xl font-semibold mb-8">
+      {{ 'userTemplate.profile.profile.title' | translate }}
+    </h2>
+    <p class="text-gray-600 text-lg md:text-2xl my-2">
+      <span class="text-black">   {{ 'userTemplate.profile.profile.info.email' | translate }} : </span>
+      {{ profileData?.email }}
+    </p>
+    <p class="text-gray-600 text-lg md:text-2xl my-2">
+      <span class="text-black">{{ 'userTemplate.profile.profile.info.phoneNumber' | translate }} : </span>
+      +212{{ profileData?.phoneNumber }}
+    </p>
+  </div>
+
+  <!-- Blood Donation Posts -->
+  <div *ngIf="showBloodDonations" class="mt-6 mx-auto w-11/12 md:w-3/4">
+    <h2 class="text-center text-lg md:text-xl font-semibold mb-4">
+      {{ 'userTemplate.profile.donationPost.title' | translate }}
+    </h2>
+    <div *ngIf="!isThereDonationsTypeDonorData" class="text-center my-20">
+      <i class="pi pi-exclamation-circle text-5xl text-gray-400 mb-4"></i>
+      <h2 class="text-2xl font-semibold text-gray-800">
+        {{ 'userTemplate.searchForDonation.noData' | translate }}
+      </h2>
+    </div>
+    <div *ngIf="isThereDonationsTypeDonorData" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div
+        *ngFor="let donation of paginatedDonationsTypeDonor"
+        class="border rounded-2xl shadow-xl pt-8 bg-white">
+        <div class="px-5 pb-6 space-y-4">
+          <p class="flex items-center gap-2 text-gray-700">
+            <i class="pi pi-map text-lg text-customBGRed"></i>
+            <strong> {{ 'userTemplate.profile.donationPost.card.fields.city' | translate }} :</strong>
+            {{ donation.city }}
+          </p>
+          <p class="flex items-center gap-2 text-gray-700">
+            <i class="pi pi-heart text-lg text-customBGRed"></i>
+            <strong>{{ 'userTemplate.profile.donationPost.card.fields.bloodType' | translate }} :</strong>
+            {{ donation.bloodType }}
+          </p>
+          <p class="flex items-center gap-2 text-gray-700">
+            <i class="pi pi-calendar text-lg text-customBGRed"></i>
+            <strong>{{ 'userTemplate.profile.donationPost.card.fields.availableFrom' | translate }} :</strong>
+            {{ donation.startDateAvailability }}
+          </p>
+          <p class="flex items-center gap-2 text-gray-700">
+            <i class="pi pi-calendar-plus text-lg text-customBGRed"></i>
+            <strong>{{ 'userTemplate.profile.donationPost.card.fields.availableUntil' | translate }} :</strong>
+            {{ donation.endDateAvailability }}
+          </p>
+        </div>
+        <div class="flex justify-around items-center border-t border-gray-300">
+          <div class="w-1/2 border-r border-gray-300 flex justify-around items-center">
+            <button type="button" (click)="deleteDonation(donation.id, 'donor')" class="py-3 hover:text-customHoverBGRed transition">
+              {{ 'userTemplate.profile.donationPost.buttons.delete' | translate }}
+            </button>
+          </div>
+          <div class="w-1/2 flex justify-around items-center">
+            <button class="py-3 hover:text-customHoverBGRed transition">
+              {{ 'userTemplate.profile.donationPost.buttons.website' | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="isThereDonationsTypeDonorData" class="mt-4 flex justify-center">
+      <p-paginator
+        [rows]="3"
+        [totalRecords]="donationsTypeDonor.length"
+        (onPageChange)="onPageChange($event, 'donor')">
+      </p-paginator>
+    </div>
+
+
+
+  </div>
+
+  <!-- Requesting Benefits Posts -->
+  <div *ngIf="showRequestBenefits" class="mt-6 mx-auto w-11/12 md:w-3/4">
+    <h2 class="text-center text-lg md:text-xl font-semibold mb-4">
+      {{ 'userTemplate.profile.benefitPost.title' | translate }}
+    </h2>
+
+    <div *ngIf="!isThereDonationsTypeTakerData" class="text-center my-20">
+      <i class="pi pi-exclamation-circle text-5xl text-gray-400 mb-4"></i>
+      <h2 class="text-2xl font-semibold text-gray-800">
+        {{ 'userTemplate.searchForDonation.noData' | translate }}
+      </h2>
+    </div>
+
+    <div *ngIf="isThereDonationsTypeTakerData" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div
+        *ngFor="let donation of paginatedDonationsTypeTaker"
+        class="border rounded-2xl shadow-xl pt-8 bg-white">
+        <div class="px-5 pb-6 space-y-4">
+          <p class="flex items-center gap-2 text-gray-700">
+            <i class="pi pi-map text-lg text-customBGRed"></i>
+            <strong> {{ 'userTemplate.profile.benefitPost.card.fields.city' | translate }} :</strong>
+            {{ donation.city }}
+          </p>
+          <p class="flex items-center gap-2 text-gray-700">
+            <i class="pi pi-heart text-lg text-customBGRed"></i>
+            <strong>{{ 'userTemplate.profile.benefitPost.card.fields.bloodType' | translate }} :</strong>
+            {{ donation.bloodType }}
+          </p>
+          <p class="flex items-center gap-2 text-gray-700">
+            <i class="pi pi-calendar text-lg text-customBGRed"></i>
+            <strong>{{ 'userTemplate.profile.benefitPost.card.fields.availableFrom' | translate }} :</strong>
+            {{ donation.startDateAvailability }}
+          </p>
+          <p class="flex items-center gap-2 text-gray-700">
+            <i class="pi pi-calendar-plus text-lg text-customBGRed"></i>
+            <strong>{{ 'userTemplate.profile.benefitPost.card.fields.availableUntil' | translate }} :</strong>
+            {{ donation.endDateAvailability }}
+          </p>
+        </div>
+        <div class="flex justify-around items-center border-t border-gray-300">
+          <div class="w-1/2 border-r border-gray-300 flex justify-around items-center">
+            <button type="button" (click)="deleteDonation(donation.id,'taker')"
+                    class="py-3 hover:text-customHoverBGRed transition">
+              {{ 'userTemplate.profile.benefitPost.buttons.delete' | translate }}
+            </button>
+          </div>
+          <div class="w-1/2 flex justify-around items-center">
+            <button class="py-3 hover:text-customHoverBGRed transition">
+              {{ 'userTemplate.profile.benefitPost.buttons.website' | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="isThereDonationsTypeTakerData" class="mt-4 flex justify-center">
+      <p-paginator
+        [rows]="9"
+        [totalRecords]="donationsTypeTaker.length"
+        (onPageChange)="onPageChange($event, 'taker')">
+      </p-paginator>
+    </div>
+  </div>
+
+</section>

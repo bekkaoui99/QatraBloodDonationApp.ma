@@ -1,0 +1,44 @@
+<section class="pb-0">
+  <div class="">
+    <div class="flex md:mx-20 pt-14 flex-row justify-between items-center">
+
+
+      <!-- Text Column -->
+      <div class="w-full text-center lg:text-left px-6 lg:px-0">
+        <h1
+          class="mb-4 text-2xl lg:text-2xl text-center font-bold"
+          [ngClass]="{
+            'xl:text-7xl arabic-text': selectedLanguage === 'ar',
+            'xl:text-4xl xl:text-left': selectedLanguage === 'fr' || selectedLanguage === 'en'
+          }"
+        >
+          {{ 'landingPage.landing.heading' | translate }}
+        </h1>
+        <p class="mb-4 text-lg lg:text-sm xl:text-lg"
+           [ngClass]="{
+            'xl:text-right': selectedLanguage === 'ar',
+            'xl:text-left': selectedLanguage === 'fr' || selectedLanguage === 'en'
+          }"
+        >
+          {{ 'landingPage.landing.description' | translate }}
+        </p>
+        <div class="flex justify-center lg:justify-start items-center">
+          <a routerLink="/user/donate" class="bg-customBGRed text-white px-6 py-3 rounded-lg lg:text-sm xl:text-lg  hover:bg-customHoverBGRed transition-colors duration-300">
+            {{ 'landingPage.landing.donateNowButton' | translate }}
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Image Column (visible on mobile and desktop) -->
+      <div class="hidden lg:block w-full mb-4 lg:mb-0 pt-5">
+        <div class="flex justify-end items-center">
+          <img src="assets/images/banner1.jpg" alt="{{ 'landingPage.header.logoAlt' | translate }}"
+               class="w-[70%] h-[70%] rounded-lg" />
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

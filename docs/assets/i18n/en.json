@@ -1,0 +1,268 @@
+{
+
+
+  "landingPage": {
+
+    "header": {
+      "logoAlt": "Qatra logo",
+      "brandName": "Qatra",
+      "navLinks": {
+        "searchDonor": "Search for a donor",
+        "donateNow": "Donate Now"
+      },
+      "buttons": {
+        "login": "Login",
+        "suggestion": "Suggestion",
+        "logout": "Logout",
+        "account": "Account"
+      },
+      "languages": {
+        "en": "English",
+        "fr": "French",
+        "ar": "Arabic"
+      }
+    },
+
+    "landing": {
+      "heading": "And whoever saves one life - it is as if he had saved mankind entirely.",
+      "description": "In Morocco, the blood donation rate is only 9.3 per thousand people, compared to over 36 in developed countries. This shortage threatens the lives of many patients and causes the postponement of essential surgeries. Your donation can save lives and ensure blood availability for those in need. Don’t let others suffer due to neglect. Be the hero your country needs, donate blood today.",
+      "donateNowButton": "Donate Now"
+    },
+
+    "howWebsiteWorks": {
+      "title": "How the Website Works",
+      "firstNotice": "This website helps you find a donor or someone in need of a donation. After finding their post, you can contact them using their phone number (which is mandatory). We do not ask for or display your gender/name to avoid harassment through your phone number. We also track views of each phone number to prevent misuse.",
+      "secondNotice": "You may skip entering your blood type if the information is unavailable.",
+      "cards": {
+        "beneficiary": {
+          "title": "Beneficiary",
+          "text": "You need to enter your blood type and the date when you will be available, along with selecting your city and blood transfusion center."
+        },
+        "donor": {
+          "title": "Donor",
+          "text": "You need to enter your blood type and the date when you will be available, along with selecting your city and blood transfusion center."
+        },
+        "search": {
+          "title": "Search for Donor/Beneficiary",
+          "text": "You need to enter your blood type and the city where the nearest blood transfusion center is located."
+        }
+      }
+    },
+
+    "bloodType": {
+      "title": "Discover the power of your blood type"
+    },
+
+    "questionSection": {
+      "title": "Frequently Asked Questions",
+      "source": "Source of information from the official Ministry of Health website",
+      "link": "Link",
+      "cards": {
+          "one":{
+            "title": "What is blood donation?",
+            "question": " Blood is a vital substance that cannot be manufactured; it must come from a healthy person to treat a sick individual in need. Blood donation is the only way patients can receive what they need to stay alive. A quantity of approximately 450 ml of blood, equivalent to 7% of the body's blood, is drawn. This process takes between five minutes to a quarter of an hour."
+          },
+          "two":{
+            "title": "Is there any danger in donating blood?",
+            "question": "Blood donation does not pose any risk to the human body. All materials used are sterile and for single use only, so no diseases can be transmitted during the donation process."
+          },
+          "three":{
+            "title": "What you need to know about blood donation",
+            "questions": [
+              "Blood donation is a noble humanitarian service to save others' lives.",
+              "Blood donation is a religious duty.",
+              "Each blood donation can save the lives of three people.",
+              "Every 10 seconds, someone urgently needs a blood transfusion.",
+              "The human body can produce 250 million red blood cells every day.",
+              "Patients are in desperate need of red blood cells, which cannot be made artificially."
+            ]
+          },
+          "four":{
+            "title": "What are the benefits of donating blood?",
+            "questions": [
+              "Helps stimulate blood circulation.",
+              "Helps activate the bone marrow and produce new blood cells (red, white blood cells, and platelets) capable of carrying more oxygen to the body's major organs.",
+              "Helps eliminate excess iron, which, if elevated in the blood, increases the risk of heart disease and accelerates the oxidation of cholesterol, leading to damage in small arteries.",
+              "People who donate blood at least once a year are less likely to suffer from circulatory diseases and leukemia."
+            ]
+          },
+          "five":{
+            "title": "What are the conditions for donating blood?",
+            "questions": [
+              "Be in good health, without any contagious diseases or chronic illnesses.",
+              "Donors must be between 18 and 60 years old.",
+              "Donors must weigh at least 50 kg.",
+              "After receiving a vaccine or medication, you must wait for three weeks.",
+              "After tooth extraction or cupping therapy, you must wait for six months.",
+              "If you have had tuberculosis, you must wait five years after recovery before donating blood."
+            ]
+          },
+          "six":{
+            "title": "What are the most important post-donation guidelines?",
+            "questions": [
+              "Take a rest and have a light meal. After 10 or 15 minutes, you can leave the donation area.",
+              "Do not remove the medical bandage from the donation site for one to three hours.",
+              "Drink more fluids than usual during the two hours following the donation.",
+              "Avoid strenuous physical activities or exercise for 24 hours.",
+              "If you smoke, avoid smoking for two hours after donation, as inhaling smoke may cause dizziness and pale skin."
+            ]
+          }
+      }
+    },
+    "supportSection": {
+      "title": "Support for the Website and Suggestions for Improvement",
+      "buttonText": "Submit Suggestion"
+    },
+    "videoSection": {
+      "title": "Video For More Details"
+    }
+
+
+  },
+
+
+  "userTemplate": {
+
+
+    "donate": {
+      "notification": {
+        "title": "Notification",
+        "request": "Request",
+        "notices": [
+          "You can post a blood donation request, which will be displayed on the donation page until someone finds it.",
+          "You can post a request to find a blood donor, which will be displayed on the donation page until someone can donate.",
+          "You can directly donate by searching for someone in need via the following link:",
+          "You can directly benefit by searching for a donor via the following link:"
+        ]
+      },
+      "form": {
+        "title": "Create a Blood Donation Request",
+        "fields": {
+          "email": {
+            "label": "Email Address",
+            "placeholder": "Please Write Your Email",
+            "validation": {
+              "required": "Email address is required.",
+              "invalid": "Please enter a valid email address."
+            }
+          },
+          "type": {
+            "label": "I want to",
+            "placeholder": "I want to",
+            "validation": {
+              "required": "Please select a status."
+            },
+            "options": {
+              "donate": "Donate",
+              "receive": "Receive"
+            }
+          },
+          "bloodType": {
+            "label": "Blood Type",
+            "placeholder": "Select Your Blood Type",
+            "validation": {
+              "required": "Please select a blood type."
+            }
+          },
+          "city": {
+            "label": "Available Cities",
+            "placeholder": "Select Your City",
+            "validation": {
+              "required": "Please select a city."
+            }
+          },
+          "locationId": {
+            "label": "Blood Transfusion Center",
+            "placeholder": "Select a Blood Transfusion Center",
+            "validation": {
+              "required": "Please select a blood transfusion center."
+            }
+          },
+          "startDateAvailability": {
+            "label": "Available From",
+            "validation": {
+              "required": "Please select a start date."
+            }
+          },
+          "endDateAvailability": {
+            "label": "Available Until",
+            "validation": {
+              "optional": "This field is optional."
+            }
+          }
+        },
+        "submitButton": "Submit"
+      }
+    },
+
+    "searchForDonation": {
+      "title": "Find a Donation",
+      "button": {
+        "search": "Search",
+        "details": "Details",
+        "website": "Website"
+      },
+      "card": {
+        "fields": {
+          "city": "City",
+          "bloodType": "Blood Type",
+          "availableFrom": "Available From",
+          "availableUntil": "Available Until"
+        }
+      },
+      "noData": "No data found for this search",
+      "hasNotSearchYet": "Please initiate a search to find donations."
+    },
+
+
+    "profile": {
+      "header": {
+        "profile": "Profile",
+        "donationPost": "My Posts for Blood Donation",
+        "benefitPost": "My Posts for Requesting Benefits"
+      },
+      "profile": {
+        "title": " Profile Information",
+        "info": {
+          "email": "Email",
+          "phoneNumber": "Phone Number"
+        }
+      },
+      "donationPost": {
+        "title": "My Posts for Blood Donation",
+        "buttons": {
+          "delete": "Delete",
+          "website": "Website"
+        },
+        "card": {
+          "fields": {
+            "city": "City",
+            "bloodType": "Blood Type",
+            "availableFrom": "Available From",
+            "availableUntil": "Available Until"
+          }
+        }
+      },
+      "benefitPost": {
+        "title": "My Posts for Requesting Benefits",
+        "buttons": {
+          "delete": "Delete",
+          "website": "Website"
+        },
+        "card": {
+          "fields": {
+            "city": "City",
+            "bloodType": "Blood Type",
+            "availableFrom": "Available From",
+            "availableUntil": "Available Until"
+          }
+        }
+      }
+    }
+
+
+  }
+
+
+
+}

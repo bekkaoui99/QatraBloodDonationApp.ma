@@ -1,0 +1,151 @@
+<section class="section bg-gray-100 pb-20 px-4 sm:px-8 lg:px-20">
+
+  <form [formGroup]="donationForm" (ngSubmit)="onSubmit()" class="pt-12">
+
+    <!-- Title -->
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-semibold text-gray-800">
+        {{ 'userTemplate.searchForDonation.title' | translate }}
+      </h2>
+    </div>
+
+    <!-- Type, Blood Type, City Selection, and Submit Button in the same row -->
+    <div class="flex flex-wrap gap-4 items-end justify-center">
+
+      <!-- Type Selection -->
+      <div class="form-group w-full sm:w-1/2 md:w-1/4">
+        <label for="type" class="block text-xs font-medium text-gray-700">
+          {{ 'userTemplate.donate.form.fields.type.label' | translate }}
+          <span class="text-red-500">*</span>
+        </label>
+        <select
+          id="type"
+          formControlName="donationType"
+          class="shadow border rounded-2xl bg-white w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-sm"
+        >
+          <option value="">
+            {{ 'userTemplate.donate.form.fields.type.placeholder' | translate }}
+          </option>
+          <option value="DONOR">
+            {{ 'userTemplate.donate.form.fields.type.options.donate' | translate }}
+          </option>
+          <option value="TAKER">
+            {{ 'userTemplate.donate.form.fields.type.options.receive' | translate }}
+          </option>
+        </select>
+        <div *ngIf="type?.invalid && type?.touched" class="text-red-500 text-xs mt-1">
+          {{ 'userTemplate.donate.form.fields.type.validation.required' | translate }}
+        </div>
+      </div>
+
+      <!-- Blood Type -->
+      <div class="form-group w-full sm:w-1/2 md:w-1/4">
+        <label for="bloodType" class="block text-xs font-medium text-gray-700">
+          {{ 'userTemplate.donate.form.fields.bloodType.label' | translate }}
+          <span class="text-red-500">*</span>
+        </label>
+        <select
+          id="bloodType"
+          formControlName="bloodType"
+          class="shadow border rounded-2xl bg-white w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-sm"
+        >
+          <option value="">
+            {{ 'userTemplate.donate.form.fields.bloodType.placeholder' | translate }}
+          </option>
+          <option *ngFor="let bloodType of bloodTypes" [value]="bloodType.value">{{ bloodType.label }}</option>
+        </select>
+        <div *ngIf="bloodType?.invalid && bloodType?.touched" class="text-red-500 text-xs mt-1">
+          {{ 'userTemplate.donate.form.fields.bloodType.validation.required' | translate }}
+        </div>
+      </div>
+
+      <!-- City -->
+      <div class="form-group w-full sm:w-1/2 md:w-1/4">
+        <label for="city" class="block text-xs font-medium text-gray-700">
+          {{ 'userTemplate.donate.form.fields.city.label' | translate }}
+          <span class="text-red-500">*</span>
+        </label>
+        <select
+          id="city"
+          formControlName="city"
+          class="shadow border rounded-2xl bg-white w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-sm"
+        >
+          <option value="">
+            {{ 'userTemplate.donate.form.fields.city.placeholder' | translate }}
+          </option>
+          <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+        </select>
+        <div *ngIf="city?.invalid && city?.touched" class="text-red-500 text-xs mt-1">
+          {{ 'userTemplate.donate.form.fields.city.validation.required' | translate }}
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group w-full sm:w-1/2 md:w-1/4">
+        <button type="submit"
+                class="w-full bg-customBGRed mt-4 py-3 rounded-3xl text-white text-center cursor-pointer hover:bg-red-600 transition">
+          {{ 'userTemplate.searchForDonation.button.search' | translate }}
+        </button>
+      </div>
+
+    </div>
+
+  </form>
+
+  <div *ngIf="!isDataFetched" class="flex flex-col items-center my-24">
+    <i class="pi pi-search text-6xl text-gray-400 mb-4"></i>
+    <h2 class="text-2xl font-semibold text-gray-800">
+      {{ 'userTemplate.searchForDonation.hasNotSearchYet' | translate }}
+    </h2>
+  </div>
+
+  <div *ngIf="isDataFetched" class="mt-10">
+
+    <div *ngIf="!thereIsNoDataForThisSearch" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div
+        *ngFor="let donation of donationResponse"
+        class="border rounded-2xl shadow-xl pt-8 bg-white"
+      >
+        <div class="px-5 pb-6 space-y-4">
+          <p class="flex items-center gap-2 text-gray-700">
+            <i class="pi pi-map text-lg text-customBGRed"></i>
+            <strong> {{ 'userTemplate.searchForDonation.card.fields.city' | translate }} :</strong>
+            {{ donation.city }}
+          </p>
+          <p class="flex items-center gap-2 text-gray-700">
+            <i class="pi pi-heart text-lg text-customBGRed"></i>
+            <strong> {{ 'userTemplate.searchForDonation.card.fields.bloodType' | translate }} :</strong>
+            {{ donation.bloodType }}
+          </p>
+          <p class="flex items-center gap-2 text-gray-700">
+            <i class="pi pi-calendar text-lg text-customBGRed"></i>
+            <strong> {{ 'userTemplate.searchForDonation.card.fields.availableFrom' | translate }} :</strong>
+            {{ donation.startDateAvailability }}
+          </p>
+          <p class="flex items-center gap-2 text-gray-700">
+            <i class="pi pi-calendar-plus text-lg text-customBGRed"></i>
+            <strong> {{ 'userTemplate.searchForDonation.card.fields.availableUntil' | translate }} :</strong>
+            {{ donation.endDateAvailability }}
+          </p>
+        </div>
+        <div class="flex justify-around items-center border-t border-gray-300">
+          <button type="button" (click)="getDetailsOfDonation(donation)" class="w-1/2 py-3 hover:text-customHoverBGRed transition border-r border-gray-300">
+            {{ 'userTemplate.searchForDonation.button.details' | translate }}
+          </button>
+          <a routerLink="/" class="w-1/2 py-3 hover:text-customHoverBGRed transition">
+            {{ 'userTemplate.searchForDonation.button.website' | translate }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="thereIsNoDataForThisSearch" class="text-center my-20">
+      <i class="pi pi-exclamation-circle text-5xl text-gray-400 mb-4"></i>
+      <h2 class="text-2xl font-semibold text-gray-800">
+        {{ 'userTemplate.searchForDonation.noData' | translate }}
+      </h2>
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800&display=swap"); /* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.arabic-text {
+  font-family: 'Aldhabi', sans-serif;
+}
+
+/* Global CSS for RTL (Arabic) */
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Global CSS for LTR (English) */
+.ltr {
+  direction: ltr;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+}

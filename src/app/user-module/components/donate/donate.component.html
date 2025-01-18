@@ -1,0 +1,198 @@
+<section class="section bg-gray-100 pb-20">
+
+  <div class="container mx-auto px-4 sm:px-8 md:px-16 lg:px-36">
+
+    <!-- Notices -->
+    <div class="shadow-lg mb-6 mt-10">
+      <div class="bg-yellow-200 p-2 flex items-center">
+        <i class="pi pi-info-circle text-yellow-500 mr-2"></i>
+        <h2 class="text-sm sm:text-base md:text-lg">
+
+          {{ 'userTemplate.donate.notification.title' | translate }}
+        </h2>
+      </div>
+      <div class="bg-yellow-100 p-2 sm:p-4">
+        <p class="text-sm sm:text-base">
+          - {{ 'userTemplate.donate.notification.notices.0' | translate }}<br>
+          - {{ 'userTemplate.donate.notification.notices.1' | translate }}<br>
+          - {{ 'userTemplate.donate.notification.notices.2' | translate }}
+          <a routerLink="/user/donate" class="text-blue-500 ">{{ 'userTemplate.donate.notification.request' | translate }}</a><br>
+          - {{ 'userTemplate.donate.notification.notices.3' | translate }}
+          <a routerLink="/user/donation" class="text-blue-500">{{ 'userTemplate.donate.notification.request' | translate }}</a><br>
+        </p>
+      </div>
+    </div>
+
+
+
+    <!-- Form -->
+    <div class="container shadow-2xl mx-auto py-10 pb-10 pt-2 rounded-2xl px-4 sm:px-8 md:px-16 lg:px-36">
+      <h2 class="text-lg md:text-2xl font-semibold text-center mb-4 md:mb-6">{{ 'userTemplate.donate.form.title' | translate }}</h2>
+
+      <div class="flex justify-center items-center mb-4">
+        <img src="assets/images/logo.png" alt="Qatra logo" class="w-16 h-16 md:w-24 md:h-24 object-contain" />
+      </div>
+
+      <form [formGroup]="donationForm" (ngSubmit)="onSubmit()" class="space-y-6">
+
+        <!-- Email and Type -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email" class="block text-sm font-medium text-gray-700">
+              {{ 'userTemplate.donate.form.fields.email.label' | translate }}
+              <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              [placeholder]="'userTemplate.donate.form.fields.email.placeholder' | translate "
+              formControlName="email"
+              class="shadow appearance-none border rounded-2xl w-full bg-white py-3 md:py-4 px-3 text-gray-700 leading-tight focus:outline-none"
+              readonly />
+            <div *ngIf="email?.invalid && email?.touched" class="text-red-500 text-xs mt-1">
+              {{ 'userTemplate.donate.form.fields.email.validation.required' | translate }}
+            </div>
+          </div>
+
+          <!-- Type -->
+          <div class="form-group">
+            <label for="type" class="block text-sm font-medium text-gray-700">
+              {{ 'userTemplate.donate.form.fields.type.label' | translate }}
+              <span class="text-red-500">*</span>
+            </label>
+            <select
+              id="type"
+              formControlName="type"
+              class="shadow appearance-none border rounded-2xl bg-white w-full py-3 md:py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
+            >
+              <option value="">
+                {{ 'userTemplate.donate.form.fields.type.placeholder' | translate }}
+              </option>
+              <option value="DONOR">{{ 'userTemplate.donate.form.fields.type.options.donate' | translate }}</option>
+              <option value="TAKER">{{ 'userTemplate.donate.form.fields.type.options.receive' | translate }}</option>
+            </select>
+            <div *ngIf="type?.invalid && type?.touched" class="text-red-500 text-xs mt-1">
+              {{ 'userTemplate.donate.form.fields.type.validation.required' | translate }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Blood Type and City -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Blood Type -->
+          <div class="form-group">
+            <label for="bloodType" class="block text-sm font-medium text-gray-700">
+              {{ 'userTemplate.donate.form.fields.bloodType.label' | translate }}
+            </label>
+            <select
+              id="bloodType"
+              formControlName="bloodType"
+              class="shadow appearance-none border rounded-2xl bg-white w-full py-3 md:py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
+            >
+              <option value="">
+                {{ 'userTemplate.donate.form.fields.bloodType.placeholder' | translate }}
+              </option>
+              <option *ngFor="let bloodType of bloodTypes" [value]="bloodType.value">{{ bloodType.label }}</option>
+            </select>
+            <div *ngIf="bloodType?.invalid && bloodType?.touched" class="text-red-500 text-xs mt-1">
+              {{ 'userTemplate.donate.form.fields.bloodType.validation.required' | translate }}
+            </div>
+          </div>
+
+          <!-- City -->
+          <div class="form-group">
+            <label for="city" class="block text-sm font-medium text-gray-700">
+              {{ 'userTemplate.donate.form.fields.city.label' | translate }}
+              <span class="text-red-500">*</span>
+            </label>
+            <select
+              id="city"
+              formControlName="city"
+              class="shadow appearance-none border rounded-2xl bg-white w-full py-3 md:py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
+            >
+              <option value="">
+                {{ 'userTemplate.donate.form.fields.city.placeholder' | translate }}
+              </option>
+              <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+            </select>
+            <div *ngIf="city?.invalid && city?.touched" class="text-red-500 text-xs mt-1">
+              {{ 'userTemplate.donate.form.fields.city.validation.required' | translate }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Location and Start Date -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Location -->
+          <div class="form-group">
+            <label for="locationId" class="block text-sm font-medium text-gray-700">
+              {{ 'userTemplate.donate.form.fields.locationId.label' | translate }}
+              <span class="text-red-500">*</span>
+            </label>
+            <select
+              id="locationId"
+              formControlName="locationId"
+              class="shadow appearance-none border rounded-2xl bg-white w-full py-3 md:py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
+            >
+              <option value="">
+                {{ 'userTemplate.donate.form.fields.locationId.placeholder' | translate }}
+              </option>
+              <option *ngFor="let location of locations" [value]="location.id">{{ location.city }}</option>
+            </select>
+            <div *ngIf="locationId?.invalid && locationId?.touched" class="text-red-500 text-xs mt-1">
+              {{ 'userTemplate.donate.form.fields.locationId.validation.required' | translate }}
+            </div>
+          </div>
+
+          <!-- Start Date Availability -->
+          <div class="form-group">
+            <label for="startDateAvailability" class="block text-sm font-medium text-gray-700">
+              {{ 'userTemplate.donate.form.fields.startDateAvailability.label' | translate }}
+              <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="date"
+              id="startDateAvailability"
+              formControlName="startDateAvailability"
+              class="shadow appearance-none border rounded-2xl w-full bg-white py-3 md:py-4 px-3 text-gray-700 leading-tight focus:outline-none"
+            />
+            <div *ngIf="startDateAvailability?.invalid && startDateAvailability?.touched" class="text-red-500 text-xs mt-1">
+              {{ 'userTemplate.donate.form.fields.startDateAvailability.validation.required' | translate }}
+            </div>
+          </div>
+        </div>
+
+        <!-- End Date Availability -->
+        <div class="form-group">
+          <label for="endDateAvailability" class="block text-sm font-medium text-gray-700">
+            {{ 'userTemplate.donate.form.fields.endDateAvailability.label' | translate }}
+          </label>
+          <input
+            type="date"
+            id="endDateAvailability"
+            formControlName="endDateAvailability"
+            class="shadow appearance-none border rounded-2xl w-full bg-white py-3 md:py-4 px-3 text-gray-700 leading-tight focus:outline-none"
+          />
+          <div *ngIf="endDateAvailability?.invalid && endDateAvailability?.touched" class="text-red-500 text-xs mt-1">
+            {{ 'userTemplate.donate.form.fields.endDateAvailability.validation.required' | translate }}
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group text-center">
+          <button
+            type="submit"
+            class="bg-customBGRed mt-4 px-8 md:px-12 py-2 md:py-3 rounded-3xl text-white"
+          >
+            {{ 'userTemplate.donate.form.submitButton' | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+
+
+
+  </div>
+
+</section>

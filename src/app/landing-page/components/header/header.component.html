@@ -1,0 +1,93 @@
+<div class="sticky top-0 bg-white shadow-md z-50 pt-5 pb-2">
+  <div class="px-20 mx-auto  flex items-center gap-x-2 justify-between">
+    <!-- Logo and Brand Name -->
+    <div class="flex flex-1 items-center space-x-4">
+      <a routerLink="/" class="flex items-center">
+        <img src="assets/images/logo.png" alt="{{ 'landingPage.header.logoAlt' | translate }}"
+             class="w-20 h-20 object-contain" />
+        <span class="text-2xl text-black hover:text-customHoverBGRed transition" id="qatra"
+              [ngClass]="{
+            'xl:text-6xl arabic-text': selectedLanguage === 'ar',
+            'xl:text-4xl': selectedLanguage === 'fr' || selectedLanguage === 'en',
+          }"
+        >
+
+          {{ 'landingPage.header.brandName' | translate }}
+        </span>
+      </a>
+    </div>
+
+    <!-- Navbar Links for Desktop -->
+    <div class="hidden flex-1 lg:flex gap-x-4 justify-center ">
+
+      <a routerLink="/user/donation" class="text-black-600 lg:text-sm xl:text-lg hover:text-customHoverBGRed transition">
+        {{ 'landingPage.header.navLinks.searchDonor' | translate }}
+      </a>
+
+      <a routerLink="/user/donate" class=" text-black-600 lg:text-sm xl:text-lg hover:text-customHoverBGRed transition">
+        {{ 'landingPage.header.navLinks.donateNow' | translate }}
+      </a>
+
+    </div>
+
+    <!-- Navbar Links for Mobile (show dropdown on mobile) -->
+    <div class="lg:hidden flex items-center">
+      <i (click)="toggleMobileMenu()" class="pi pi-bars text-2xl text-black cursor-pointer"></i>
+    </div>
+
+
+
+    <!-- Buttons for Desktop (hidden on mobile) -->
+    <div class="hidden flex-1 lg:flex items-center justify-end gap-x-2">
+
+      <!-- Language Selector (hidden on mobile) -->
+      <div class="hidden lg:block">
+        <div (click)="toggleLanguageDropdown()" class="flex items-center gap-x-2 cursor-pointer">
+
+          <span class="text-black text-xl">
+          {{ 'landingPage.header.languages.' + selectedLanguage | translate }}
+        </span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M5.292 7.293a1 1 0 011.415 0L10 10.586l3.293-3.293a1 1 0 011.415 1.415l-4 4a1 1 0 01-1.415 0l-4-4a1 1 0 010-1.415z" />
+          </svg>
+        </div>
+        <ul *ngIf="languageDropdownVisible" class="absolute mt-2 bg-gray-800 text-white rounded-lg shadow-lg z-10 w-32">
+          <li class="cursor-pointer px-4 py-2 hover:bg-gray-600" (click)="setLanguage('en')">
+            {{ 'landingPage.header.languages.en' | translate }}
+          </li>
+          <li class="cursor-pointer px-4 py-2 hover:bg-gray-600" (click)="setLanguage('fr')">
+            {{ 'landingPage.header.languages.fr' | translate }}
+          </li>
+          <li class="cursor-pointer px-4 py-2 hover:bg-gray-600" (click)="setLanguage('ar')">
+            {{ 'landingPage.header.languages.ar' | translate }}
+          </li>
+        </ul>
+      </div>
+
+      <a routerLink="/auth/login" class="bg-customBGRed text-white text-sm font-medium px-4 py-3 rounded-[6px] hover:bg-customHoverBGRed transition">
+        {{ 'landingPage.header.buttons.login' | translate }}
+      </a>
+      <a routerLink="/feedback" class="bg-customBGRed text-white text-sm font-medium px-4 py-3 rounded-[6px] hover:bg-customHoverBGRed transition">
+        {{ 'landingPage.header.buttons.suggestion' | translate }}
+      </a>
+    </div>
+
+
+  </div>
+
+  <!-- Mobile Dropdown Menu (inline, not as popup) -->
+  <div *ngIf="isMobileMenuOpen" class="lg:hidden flex flex-col w-full bg-white shadow-md mt-2">
+    <a routerLink="/donations" class="text-black py-2 px-4 hover:bg-gray-100">
+      {{ 'landingPage.header.navLinks.searchDonor' | translate }}
+    </a>
+    <a routerLink="/donations" class="text-black py-2 px-4 hover:bg-gray-100">
+      {{ 'landingPage.header.navLinks.donateNow' | translate }}
+    </a>
+    <a routerLink="/auth/login" class="text-black py-2 px-4 hover:bg-gray-100">
+      {{ 'landingPage.header.buttons.login' | translate }}
+    </a>
+    <a routerLink="/feedback" class="text-black py-2 px-4 hover:bg-gray-100">
+      {{ 'landingPage.header.buttons.suggestion' | translate }}
+    </a>
+  </div>
+</div>

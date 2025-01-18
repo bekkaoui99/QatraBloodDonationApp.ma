@@ -1,0 +1,234 @@
+#about_bt {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}
+#about_bt a {
+  display: inline-block;
+  height: 2.5em;
+  margin: 0 5px;
+}
+#about_bt a i {
+  font-size: 1.5em;
+}
+#about_bt a i.fa-linkedin {
+  color: #0073b0;
+}
+#about_bt a i.fa-github, #about_bt a i.fa-globe {
+  color: #24292e;
+}
+#about_bt a i.fa-twitter {
+  color: #1da1f2;
+}
+#content_bt {
+  position: relative;
+  margin: 50px auto;
+  width: 600px;
+  height: 600px;
+}
+#content_bt h3 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+#blood_selector_bt {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 5px;
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  left: 10px;
+  top: 45px;
+  z-index: 2;
+}
+#blood_selector_bt div {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7f7;
+  border: 1px solid #b51e23;
+  border-radius: 25%;
+}
+#blood_selector_bt div:hover {
+  border: 1px solid #1da1f2;
+  font-weight: bold;
+  cursor: pointer;
+}
+#blood_content_bt {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  height: 100%;
+}
+#center_via_c_bt {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+#center_via_c_bt .center_via_bt {
+  width: 8px;
+  background: #ccc;
+  height: 200px;
+  position: absolute;
+  left: 304px;
+  top: 276px;
+}
+#center_via_c_bt .blood_via_bt {
+  height: 0;
+  background-color: #b51e23;
+  right: 50%;
+  width: 8px;
+  transition: height 0.25s;
+}
+/*  .bar {
+  position: fixed;
+  right: 0;
+  top: 55px;
+  width: 55%;
+  height: 8px;
+  border-radius: 2px 0 0 2px;
+  background-color: #ccc;
+} */
+.main_bag_bt {
+  position: absolute;
+  width: 100px;
+  height: 140px;
+  top: 70px;
+  left: 250px;
+  border-radius: 30px;
+  opacity: 0.8;
+  background-color: rgba(154, 207, 234, 0.9);
+  border: 8px solid rgba(154, 207, 234, 0.9);
+}
+.main_bag_bt .blood_bt {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #b51e23;
+  border-radius: 0 0 35px 35px;
+  transition: height 1s;
+}
+.main_bag_bt .blood_bt::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  width: 100%;
+  height: 10px;
+  background-color: #92191b;
+  border-radius: 100%;
+}
+.main_bag_bt::before {
+  content: "";
+  position: absolute;
+  top: -118px;
+  left: 45%;
+  width: 10%;
+  height: 110px;
+  background-color: #ccc;
+}
+#humans_bt {
+  position: absolute;
+  top: 276px;
+  width: 400px;
+  height: 200px;
+  left: 108px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+}
+#humans_bt .human_bt {
+  position: relative;
+}
+#humans_bt .human_bt .via_bt {
+  position: relative;
+  text-align: centre;
+  width: 50%;
+  height: 8px;
+  background-color: #ccc;
+  bottom: 0;
+}
+#humans_bt .human_bt .blood_via_bt {
+  position: absolute;
+  height: 8px;
+  background-color: #b51e23;
+  width: 0;
+  bottom: 0;
+  transition: width 1s;
+}
+#humans_bt .human_bt.left_bt {
+  display: grid;
+  justify-content: left;
+  align-content: center;
+}
+#humans_bt .human_bt.left_bt .blood_via_bt {
+  right: 0;
+}
+#humans_bt .human_bt.left_bt .scribble_bt {
+  left: -30px;
+}
+#humans_bt .human_bt.left_bt .scribble_bt span {
+  left: -40px;
+  text-align: right;
+}
+#humans_bt .human_bt.right_bt {
+  display: grid;
+  justify-content: right;
+  align-content: center;
+}
+#humans_bt .human_bt.right_bt .scribble_bt {
+  right: -60px;
+}
+#humans_bt .human_bt.right_bt .scribble_bt span {
+  right: -10px;
+}
+#humans_bt .human_bt .scribble_bt {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: 0;
+  transition: background 1s;
+}
+#humans_bt .human_bt .scribble_bt span {
+  position: absolute;
+  display: grid;
+  align-items: end;
+  height: 100%;
+}
+#humans_bt .human_bt .scribble_bt .head_bt {
+  width: 30%;
+  height: 30%;
+  background-color: #666;
+  border-radius: 50%;
+  margin: 2px auto;
+  transition: background 1s;
+  position: absolute;
+  top: 30%;
+  left: 5%;
+}
+#humans_bt .human_bt .scribble_bt .body_bt {
+  position: absolute;
+  bottom: 0;
+  width: 40%;
+  height: 20%;
+  background-color: #666;
+  border-radius: 50% 50% 0 0;
+  margin: 0 auto;
+  transition: background 1s;
+}
+.no_transition_bt {
+  transition: none !important;
+}
+.highlight_bt {
+  border: 2px solid #b51e23 !important;
+  font-weight: bold;
+}
+.highlightText_bt {
+  font-weight: bold;
+}
