@@ -37,7 +37,7 @@ export class HeaderComponent {
   }
 
   reloadPage() {
-    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+    this.router.navigateByUrl('', { skipLocationChange: true }).then(() => {
       window.location.reload(); // Full-page reload
     });
   }
